@@ -15,8 +15,8 @@ export default function Feed({ username }) {
         const fetchPosts = async () => {
             console.log("feed rendered");
             const res = username
-                ? await axios.get("/posts/profile/" + username)
-                : await axios.get("posts/timeline/" + user._id); //61b0fca4c2f0af06bd33fb3f
+                ? await axios.get("http://localhost:3000/api/posts/profile/" + username)
+                : await axios.get("http://localhost:3000/api/posts/timeline/" + user._id); //61b0fca4c2f0af06bd33fb3f
             //console.log(res);
             setPosts(
                 res.data.sort((p1, p2) => {
